@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B22BE3C827D51B160086CE01 /* librdp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22BE3C727D51B090086CE01 /* librdp.a */; };
 		B29B90AE27D505DF0025F4BB /* rdp_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AD27D505DF0025F4BB /* rdp_iosApp.swift */; };
 		B29B90B027D505DF0025F4BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AF27D505DF0025F4BB /* ContentView.swift */; };
 		B29B90B227D505E60025F4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B90B127D505E60025F4BB /* Assets.xcassets */; };
 		B29B90B527D505E60025F4BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B90B427D505E60025F4BB /* Preview Assets.xcassets */; };
-		B29B90BD27D50FD30025F4BB /* rdp in Resources */ = {isa = PBXBuildFile; fileRef = B29B90BC27D50FD30025F4BB /* rdp */; };
+		B2B650DF27D52DC100695A6E /* rdp-Bridging-Header.h in Resources */ = {isa = PBXBuildFile; fileRef = B2B650DC27D52DC100695A6E /* rdp-Bridging-Header.h */; };
+		B2B650E027D52DC100695A6E /* RDPWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B650DD27D52DC100695A6E /* RDPWrapper.swift */; };
+		B2B650E127D52DC100695A6E /* create-library.sh in Resources */ = {isa = PBXBuildFile; fileRef = B2B650DE27D52DC100695A6E /* create-library.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B22BE3C627D51A5B0086CE01 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		B22BE3C727D51B090086CE01 /* librdp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librdp.a; path = "../../Intermediates.noindex/rdp-ios.build/Debug-iphoneos/rdp-ios.build/DerivedSources/librdp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29B90AA27D505DF0025F4BB /* rdp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rdp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29B90AD27D505DF0025F4BB /* rdp_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rdp_iosApp.swift; sourceTree = "<group>"; };
 		B29B90AF27D505DF0025F4BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B29B90B127D505E60025F4BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B29B90B427D505E60025F4BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B29B90BC27D50FD30025F4BB /* rdp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = rdp; sourceTree = "<group>"; };
+		B2B650DB27D52DC100695A6E /* rdp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rdp.h; sourceTree = "<group>"; };
+		B2B650DC27D52DC100695A6E /* rdp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rdp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B2B650DD27D52DC100695A6E /* RDPWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RDPWrapper.swift; sourceTree = "<group>"; };
+		B2B650DE27D52DC100695A6E /* create-library.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "create-library.sh"; sourceTree = "<group>"; };
+		B2B650E227D5402C00695A6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22BE3C827D51B160086CE01 /* librdp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +44,6 @@
 		B22BE3C527D51A5B0086CE01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B22BE3C727D51B090086CE01 /* librdp.a */,
 				B22BE3C627D51A5B0086CE01 /* libresolv.tbd */,
 			);
 			name = Frameworks;
@@ -50,8 +52,8 @@
 		B29B90A127D505DE0025F4BB = {
 			isa = PBXGroup;
 			children = (
+				B2B650DA27D52DA400695A6E /* rdp */,
 				B29B90AC27D505DF0025F4BB /* rdp-ios */,
-				B29B90BC27D50FD30025F4BB /* rdp */,
 				B29B90AB27D505DF0025F4BB /* Products */,
 				B22BE3C527D51A5B0086CE01 /* Frameworks */,
 			);
@@ -68,6 +70,7 @@
 		B29B90AC27D505DF0025F4BB /* rdp-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B2B650E227D5402C00695A6E /* Info.plist */,
 				B29B90AD27D505DF0025F4BB /* rdp_iosApp.swift */,
 				B29B90AF27D505DF0025F4BB /* ContentView.swift */,
 				B29B90B127D505E60025F4BB /* Assets.xcassets */,
@@ -84,6 +87,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B2B650DA27D52DA400695A6E /* rdp */ = {
+			isa = PBXGroup;
+			children = (
+				B2B650DE27D52DC100695A6E /* create-library.sh */,
+				B2B650DC27D52DC100695A6E /* rdp-Bridging-Header.h */,
+				B2B650DB27D52DC100695A6E /* rdp.h */,
+				B2B650DD27D52DC100695A6E /* RDPWrapper.swift */,
+			);
+			path = rdp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,7 +109,6 @@
 				B29B90A627D505DF0025F4BB /* Sources */,
 				B29B90A727D505DF0025F4BB /* Frameworks */,
 				B29B90A827D505DF0025F4BB /* Resources */,
-				B22BE3C127D517F80086CE01 /* remove-library */,
 			);
 			buildRules = (
 			);
@@ -144,33 +157,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B29B90BD27D50FD30025F4BB /* rdp in Resources */,
 				B29B90B527D505E60025F4BB /* Preview Assets.xcassets in Resources */,
 				B29B90B227D505E60025F4BB /* Assets.xcassets in Resources */,
+				B2B650E127D52DC100695A6E /* create-library.sh in Resources */,
+				B2B650DF27D52DC100695A6E /* rdp-Bridging-Header.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B22BE3C127D517F80086CE01 /* remove-library */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "remove-library";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "# source ${PROJECT_DIR}/rdp/remove-library.sh\n";
-		};
 		B29B90BB27D50C2D0025F4BB /* create-library */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -184,7 +180,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILES_DIR)/librdp.a",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
@@ -197,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B650E027D52DC100695A6E /* RDPWrapper.swift in Sources */,
 				B29B90B027D505DF0025F4BB /* ContentView.swift in Sources */,
 				B29B90AE27D505DF0025F4BB /* rdp_iosApp.swift in Sources */,
 			);
@@ -333,6 +329,7 @@
 				DEVELOPMENT_TEAM = 65SSYKAU6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "rdp-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -346,11 +343,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "../rabbit-digger-pro/target/aarch64-apple-ios/debug/";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lrdp";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rabbit-digger.rdp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/rdp/rdp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,6 +368,7 @@
 				DEVELOPMENT_TEAM = 65SSYKAU6F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "rdp-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -381,11 +382,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "../rabbit-digger-pro/target/aarch64-apple-ios/release/";
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lrdp";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rabbit-digger.rdp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/rdp/rdp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

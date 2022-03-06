@@ -44,6 +44,4 @@ elif [[ "$CONFIGURATION" == "Debug" ]]; then
 else
     echo "error: Unexpected build configuration: $CONFIGURATION"
 fi
-#
-# Copy the built library to the derived files directory
-cp -v "../rabbit-digger-pro/target/${rust_target}/${rust_config}/librdp.a" ${DERIVED_FILES_DIR}
+
