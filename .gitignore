@@ -1,2 +1,14 @@
 .DS_Store
 target
+fuzz
+libtest.rmeta
+# profiling
+*.profdata
+*.profraw
+
+## User settings
+xcuserdata/
+
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
