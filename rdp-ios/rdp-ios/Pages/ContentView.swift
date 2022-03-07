@@ -9,36 +9,56 @@ import SwiftUI
 import Alamofire
 
 struct ContentView: View {
-    @State var text: String?
-    @State var counter: Int = 0
-    var rdp: RDPWrapper? = try? RDPWrapper.init(config: """
-server:
-  socks5:
-    type: socks5
-    bind: 0.0.0.0:10800
-""")
+    var manager = VPNManager.shared()
+    let pub = NotificationCenter.default
+        .publisher(for: NSNotification.Name.NEVPNStatusDidChange)
+    
+    @State var isVPNOn: Bool = false
     
     func viewDidLoad() {
+        manager.loadVPNPreference() { error in
+            guard error == nil else {
+                fatalError("load VPN preference failed: \(error.debugDescription)")
+            }
+            self.updateStatus()
+        }
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Hello, world! Count \(counter). Text: \(text ?? "No data")")
-                .padding()
-            Button("+1", action: {
-                self.counter += 1
-            })
-            Button("-1", action: {
-                self.counter -= 1
-            })
-            Button("Click me!", action: onClick)
+            Button("获取联网权限!", action: request)
+            Toggle("启动 rabbit-digger-pro", isOn: $isVPNOn )
+                .onChange(of: isVPNOn) { _v in
+                    toggle()
+                }
+        }.onReceive(pub) { (output) in
+            self.updateStatus()
         }
     }
     
-    func onClick() {
+    func toggle() {
+        manager.enableVPNManager() { error in
+            guard error == nil else {
+                fatalError("enable VPN failed: \(error.debugDescription)")
+            }
+            self.manager.toggleVPNConnection() { error in
+                guard error == nil else {
+                    fatalError("toggle VPN connection failed: \(error.debugDescription)")
+                }
+            }
+        }
+    }
+    
+    func updateStatus() {
+        self.isVPNOn = (manager.manager.connection.status != .disconnected &&
+                        manager.manager.connection.status != .disconnecting &&
+                        manager.manager.connection.status != .invalid)
+    }
+    
+    
+    func request() {
         AF.request("https://httpbin.org/get").responseString { response in
             debugPrint(response)
-            self.text = try? response.result.get()
         }
     }
 }

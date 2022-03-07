@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		B22F314027D54C710094FE15 /* LocalNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F313F27D54C710094FE15 /* LocalNetwork.swift */; };
 		B22F314527D625B00094FE15 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B22F314427D625B00094FE15 /* Alamofire */; };
+		B22F314A27D643AE0094FE15 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F314927D643AE0094FE15 /* VPNManager.swift */; };
+		B22F315127D64CF60094FE15 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22F315027D64CF50094FE15 /* NetworkExtension.framework */; };
+		B22F315427D64CF60094FE15 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F315327D64CF60094FE15 /* PacketTunnelProvider.swift */; };
+		B22F315927D64CF60094FE15 /* packet-tunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B22F314F27D64CF50094FE15 /* packet-tunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B2922DD027D64F1C00C18630 /* RDPWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B650DD27D52DC100695A6E /* RDPWrapper.swift */; };
+		B2922DD127D64F3C00C18630 /* create-library.sh in Resources */ = {isa = PBXBuildFile; fileRef = B2B650DE27D52DC100695A6E /* create-library.sh */; };
 		B29B90AE27D505DF0025F4BB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AD27D505DF0025F4BB /* App.swift */; };
 		B29B90B027D505DF0025F4BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AF27D505DF0025F4BB /* ContentView.swift */; };
 		B29B90B227D505E60025F4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B90B127D505E60025F4BB /* Assets.xcassets */; };
@@ -18,9 +24,39 @@
 		B2B650E127D52DC100695A6E /* create-library.sh in Resources */ = {isa = PBXBuildFile; fileRef = B2B650DE27D52DC100695A6E /* create-library.sh */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B22F315727D64CF60094FE15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B29B90A227D505DE0025F4BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B22F314E27D64CF50094FE15;
+			remoteInfo = "packet-tunnel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B22F315D27D64CF60094FE15 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B22F315927D64CF60094FE15 /* packet-tunnel.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B22BE3C627D51A5B0086CE01 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		B22F313F27D54C710094FE15 /* LocalNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetwork.swift; sourceTree = "<group>"; };
+		B22F314927D643AE0094FE15 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		B22F314F27D64CF50094FE15 /* packet-tunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "packet-tunnel.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22F315027D64CF50094FE15 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		B22F315327D64CF60094FE15 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		B22F315527D64CF60094FE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22F315627D64CF60094FE15 /* packet_tunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = packet_tunnel.entitlements; sourceTree = "<group>"; };
 		B29B90AA27D505DF0025F4BB /* rdp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rdp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29B90AD27D505DF0025F4BB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		B29B90AF27D505DF0025F4BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +70,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B22F314C27D64CF50094FE15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22F315127D64CF60094FE15 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B29B90A727D505DF0025F4BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -49,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				B22BE3C627D51A5B0086CE01 /* libresolv.tbd */,
+				B22F315027D64CF50094FE15 /* NetworkExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -65,8 +110,19 @@
 			isa = PBXGroup;
 			children = (
 				B22F313F27D54C710094FE15 /* LocalNetwork.swift */,
+				B22F314927D643AE0094FE15 /* VPNManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B22F315227D64CF60094FE15 /* packet-tunnel */ = {
+			isa = PBXGroup;
+			children = (
+				B22F315327D64CF60094FE15 /* PacketTunnelProvider.swift */,
+				B22F315527D64CF60094FE15 /* Info.plist */,
+				B22F315627D64CF60094FE15 /* packet_tunnel.entitlements */,
+			);
+			path = "packet-tunnel";
 			sourceTree = "<group>";
 		};
 		B29B90A127D505DE0025F4BB = {
@@ -74,6 +130,7 @@
 			children = (
 				B2B650DA27D52DA400695A6E /* rdp */,
 				B29B90AC27D505DF0025F4BB /* rdp-ios */,
+				B22F315227D64CF60094FE15 /* packet-tunnel */,
 				B29B90AB27D505DF0025F4BB /* Products */,
 				B22BE3C527D51A5B0086CE01 /* Frameworks */,
 			);
@@ -83,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				B29B90AA27D505DF0025F4BB /* rdp-ios.app */,
+				B22F314F27D64CF50094FE15 /* packet-tunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +180,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B22F314E27D64CF50094FE15 /* packet-tunnel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B22F315A27D64CF60094FE15 /* Build configuration list for PBXNativeTarget "packet-tunnel" */;
+			buildPhases = (
+				B22F314B27D64CF50094FE15 /* Sources */,
+				B22F314C27D64CF50094FE15 /* Frameworks */,
+				B22F314D27D64CF50094FE15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "packet-tunnel";
+			productName = "packet-tunnel";
+			productReference = B22F314F27D64CF50094FE15 /* packet-tunnel.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B29B90A927D505DF0025F4BB /* rdp-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B29B90B827D505E60025F4BB /* Build configuration list for PBXNativeTarget "rdp-ios" */;
@@ -130,10 +205,12 @@
 				B29B90A627D505DF0025F4BB /* Sources */,
 				B29B90A727D505DF0025F4BB /* Frameworks */,
 				B29B90A827D505DF0025F4BB /* Resources */,
+				B22F315D27D64CF60094FE15 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B22F315827D64CF60094FE15 /* PBXTargetDependency */,
 			);
 			name = "rdp-ios";
 			packageProductDependencies = (
@@ -153,6 +230,9 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					B22F314E27D64CF50094FE15 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 					B29B90A927D505DF0025F4BB = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -175,11 +255,20 @@
 			projectRoot = "";
 			targets = (
 				B29B90A927D505DF0025F4BB /* rdp-ios */,
+				B22F314E27D64CF50094FE15 /* packet-tunnel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B22F314D27D64CF50094FE15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2922DD127D64F3C00C18630 /* create-library.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B29B90A827D505DF0025F4BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +304,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B22F314B27D64CF50094FE15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2922DD027D64F1C00C18630 /* RDPWrapper.swift in Sources */,
+				B22F315427D64CF60094FE15 /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B29B90A627D505DF0025F4BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,13 +320,82 @@
 				B2B650E027D52DC100695A6E /* RDPWrapper.swift in Sources */,
 				B29B90B027D505DF0025F4BB /* ContentView.swift in Sources */,
 				B22F314027D54C710094FE15 /* LocalNetwork.swift in Sources */,
+				B22F314A27D643AE0094FE15 /* VPNManager.swift in Sources */,
 				B29B90AE27D505DF0025F4BB /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B22F315827D64CF60094FE15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B22F314E27D64CF50094FE15 /* packet-tunnel */;
+			targetProxy = B22F315727D64CF60094FE15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B22F315B27D64CF60094FE15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "packet-tunnel/packet_tunnel.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 65SSYKAU6F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "packet-tunnel/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "packet-tunnel";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "../rabbit-digger-pro/target/aarch64-apple-ios/debug/";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lrdp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rabbit-digger.rdp-ios.packet-tunnel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/rdp/rdp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B22F315C27D64CF60094FE15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "packet-tunnel/packet_tunnel.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 65SSYKAU6F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "packet-tunnel/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "packet-tunnel";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "../rabbit-digger-pro/target/aarch64-apple-ios/release/";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lrdp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rabbit-digger.rdp-ios.packet-tunnel";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/rdp/rdp-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B29B90B627D505E60025F4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -348,6 +515,7 @@
 		B29B90B927D505E60025F4BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -387,6 +555,7 @@
 		B29B90BA27D505E60025F4BB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -426,6 +595,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B22F315A27D64CF60094FE15 /* Build configuration list for PBXNativeTarget "packet-tunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B22F315B27D64CF60094FE15 /* Debug */,
+				B22F315C27D64CF60094FE15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B29B90A527D505DF0025F4BB /* Build configuration list for PBXProject "rdp-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
