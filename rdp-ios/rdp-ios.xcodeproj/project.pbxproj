@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B29B90AE27D505DF0025F4BB /* rdp_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AD27D505DF0025F4BB /* rdp_iosApp.swift */; };
+		B22F314027D54C710094FE15 /* LocalNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F313F27D54C710094FE15 /* LocalNetwork.swift */; };
+		B22F314527D625B00094FE15 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B22F314427D625B00094FE15 /* Alamofire */; };
+		B29B90AE27D505DF0025F4BB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AD27D505DF0025F4BB /* App.swift */; };
 		B29B90B027D505DF0025F4BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B90AF27D505DF0025F4BB /* ContentView.swift */; };
 		B29B90B227D505E60025F4BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B90B127D505E60025F4BB /* Assets.xcassets */; };
 		B29B90B527D505E60025F4BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B29B90B427D505E60025F4BB /* Preview Assets.xcassets */; };
@@ -18,8 +20,9 @@
 
 /* Begin PBXFileReference section */
 		B22BE3C627D51A5B0086CE01 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		B22F313F27D54C710094FE15 /* LocalNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetwork.swift; sourceTree = "<group>"; };
 		B29B90AA27D505DF0025F4BB /* rdp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rdp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B29B90AD27D505DF0025F4BB /* rdp_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rdp_iosApp.swift; sourceTree = "<group>"; };
+		B29B90AD27D505DF0025F4BB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		B29B90AF27D505DF0025F4BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B29B90B127D505E60025F4BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B29B90B427D505E60025F4BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B22F314527D625B00094FE15 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +51,22 @@
 				B22BE3C627D51A5B0086CE01 /* libresolv.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B22F314127D607890094FE15 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				B29B90AF27D505DF0025F4BB /* ContentView.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		B22F314227D607940094FE15 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B22F313F27D54C710094FE15 /* LocalNetwork.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		B29B90A127D505DE0025F4BB = {
@@ -70,9 +90,10 @@
 		B29B90AC27D505DF0025F4BB /* rdp-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B22F314227D607940094FE15 /* Utils */,
+				B22F314127D607890094FE15 /* Pages */,
 				B2B650E227D5402C00695A6E /* Info.plist */,
-				B29B90AD27D505DF0025F4BB /* rdp_iosApp.swift */,
-				B29B90AF27D505DF0025F4BB /* ContentView.swift */,
+				B29B90AD27D505DF0025F4BB /* App.swift */,
 				B29B90B127D505E60025F4BB /* Assets.xcassets */,
 				B29B90B327D505E60025F4BB /* Preview Content */,
 			);
@@ -115,6 +136,9 @@
 			dependencies = (
 			);
 			name = "rdp-ios";
+			packageProductDependencies = (
+				B22F314427D625B00094FE15 /* Alamofire */,
+			);
 			productName = "rdp-ios";
 			productReference = B29B90AA27D505DF0025F4BB /* rdp-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -143,6 +167,9 @@
 				Base,
 			);
 			mainGroup = B29B90A127D505DE0025F4BB;
+			packageReferences = (
+				B22F314327D625B00094FE15 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = B29B90AB27D505DF0025F4BB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,7 +221,8 @@
 			files = (
 				B2B650E027D52DC100695A6E /* RDPWrapper.swift in Sources */,
 				B29B90B027D505DF0025F4BB /* ContentView.swift in Sources */,
-				B29B90AE27D505DF0025F4BB /* rdp_iosApp.swift in Sources */,
+				B22F314027D54C710094FE15 /* LocalNetwork.swift in Sources */,
+				B29B90AE27D505DF0025F4BB /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +445,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B22F314327D625B00094FE15 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B22F314427D625B00094FE15 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B22F314327D625B00094FE15 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B29B90A227D505DE0025F4BB /* Project object */;
 }

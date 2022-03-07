@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ContentView: View {
+    @State var text: String?
     @State var counter: Int = 0
     var rdp: RDPWrapper? = try? RDPWrapper.init(config: """
 server:
@@ -16,14 +18,12 @@ server:
     bind: 0.0.0.0:10800
 """)
     
-    init() {
-        RDPWrapper.setup_stdout_logger()
-        print("init");
+    func viewDidLoad() {
     }
-  
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Hello, world! Count \(counter)")
+            Text("Hello, world! Count \(counter). Text: \(text ?? "No data")")
                 .padding()
             Button("+1", action: {
                 self.counter += 1
@@ -36,6 +36,10 @@ server:
     }
     
     func onClick() {
+        AF.request("https://httpbin.org/get").responseString { response in
+            debugPrint(response)
+            self.text = try? response.result.get()
+        }
     }
 }
 

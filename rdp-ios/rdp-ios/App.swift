@@ -14,4 +14,9 @@ struct rdp_iosApp: App {
             ContentView()
         }
     }
+    
+    init() {
+        RDPWrapper.setup_stdout_logger()
+        triggerLocalNetworkPrivacyAlert()
+    }
 }
